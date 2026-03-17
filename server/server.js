@@ -68,7 +68,7 @@ app.post('/api/offer/cmd/add', (req, res) => {
 
 // PUT change a specific Angebot (by ID)
 app.post('/api/offer/cmd/change', (req, res) => {
-    const id = parseInt(req.params.id, 10);
+    const id = parseInt(req.body.id, 10);
     const index = tripData.findIndex((r) => r.id === id);
     if (index < 0) {
         return res.status(404).json({error: 'Trip not found'});

@@ -32,6 +32,8 @@
     "@ngrx/signals": "^20.0.0",
     "audit": "^0.0.6",
     "bootstrap-4-grid": "^3.4.0",
+    "cors": "^2.8.6",
+    "express": "^4.22.1",
     "fix": "^0.0.6",
     "http-server": "^14.1.1",
     "ngx-scrollbar": "^18.0.0",
