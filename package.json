@@ -39,8 +39,7 @@
     "perfect-scrollbar": "1.5.5",
     "resize-observer-polyfill": "1.5.1",
     "rxjs": "~7.5.4",
-    "tslib": "^2.0.0",
-    "zone.js": "^0.15.1"
+    "tslib": "^2.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~21.2.2",
