@@ -1,6 +1,5 @@
 import {Component, inject, Signal} from '@angular/core';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
-import {Observable} from 'rxjs';
 import {toSignal} from '@angular/core/rxjs-interop';
 import {map, shareReplay} from 'rxjs/operators';
 import {MatSidenav, MatSidenavContainer, MatSidenavContent} from '@angular/material/sidenav';

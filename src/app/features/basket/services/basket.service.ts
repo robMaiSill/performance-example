@@ -7,8 +7,6 @@ import {Basket, Trip} from '@trip/models';
 export class BasketService {
   private readonly basketSignal = signal<Basket>({ items: [] });
 
-  constructor() {}
-
   add(item: Trip): void {
     const current = this.basketSignal();
     this.basketSignal.set({ items: [...current.items, item] });

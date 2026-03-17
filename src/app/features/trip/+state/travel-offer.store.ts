@@ -3,7 +3,6 @@ import {rxMethod} from '@ngrx/signals/rxjs-interop';
 import {pipe, switchMap, tap} from 'rxjs';
 import {inject} from '@angular/core';
 import {tapResponse} from '@ngrx/operators';
-import {Router} from '@angular/router';
 import {OfferService, PageDtoTravelOffersDetailsDto} from '@trip/api';
 import {mapToTripList, Trip} from '@trip/models';
 
@@ -21,7 +20,7 @@ export const initialState: TravelOfferState = {
 
 export const TravelOfferStore = signalStore(
     withState(initialState),
-    withMethods((store, offerService = inject(OfferService), router = inject(Router)) => ({
+    withMethods((store, offerService = inject(OfferService)) => ({
         loadTravelOffer: rxMethod<void>(
             pipe(
                 tap(() => patchState(store, {isLoading: true})),
