@@ -22,12 +22,12 @@ describe('BasketService', () => {
 
   it('should add item to basket', () => {
     const trip: Trip = {
-      id: '1',
-      from: 'Berlin',
-      to: 'Munich',
-      date: '2026-04-01',
+      header: 'trip',
+      content: [],
+      id: 1,
+      from: new Date(),
+      to: new Date(),
       price: 50,
-      duration: 360,
     };
 
     service.add(trip);
@@ -38,21 +38,21 @@ describe('BasketService', () => {
 
   it('should add multiple items to basket', () => {
     const trip1: Trip = {
-      id: '1',
-      from: 'Berlin',
-      to: 'Munich',
-      date: '2026-04-01',
+      header: 'trip',
+      content: [],
+      id: 1,
+      from: new Date(),
+      to: new Date(),
       price: 50,
-      duration: 360,
     };
 
     const trip2: Trip = {
-      id: '2',
-      from: 'Hamburg',
-      to: 'Frankfurt',
-      date: '2026-04-02',
+      header: 'trip',
+      content: [],
+      id: 1,
+      from: new Date(),
+      to: new Date(),
       price: 45,
-      duration: 300,
     };
 
     service.add(trip1);
@@ -65,12 +65,12 @@ describe('BasketService', () => {
 
   it('should maintain signal reactivity', () => {
     const trip: Trip = {
-      id: '1',
-      from: 'Berlin',
-      to: 'Munich',
-      date: '2026-04-01',
+      header: 'trip',
+      content: [],
+      id: 1,
+      from: new Date(),
+      to: new Date(),
       price: 50,
-      duration: 360,
     };
 
     const countSignal = service.getCount();

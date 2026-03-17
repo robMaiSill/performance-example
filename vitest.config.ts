@@ -16,7 +16,6 @@ export default defineConfig({
     setupFiles: ['src/test-setup.ts'],
     include: ['src/**/*.spec.ts'],
     pool: 'threads',
-    singleThread: true,
     server: {
       deps: {
         inline: ['@angular/**'],
