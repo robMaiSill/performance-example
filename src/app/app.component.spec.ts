@@ -25,9 +25,9 @@ describe('AppComponent', () => {
         expect(component.title).toEqual('performance-app');
     });
 
-    it('should render title', () => {
+    it('should render navigation component', () => {
         fixture.detectChanges();
         const compiled = fixture.nativeElement;
-        expect(compiled.querySelector('.content span')?.textContent).toContain('performance-app app is running!');
+        expect(compiled.querySelector('app-navigation')).toBeTruthy();
     });
 });
