@@ -21,13 +21,23 @@
             </button>
         </div>
         <mat-list>
-            <ng-scrollbar>
-                <section class="scroll-container">
-                    @for (offer of filteredOffers(); track offer) {
-                        <app-trip-list-item [trip]="offer" (addAction)="addToCart(offer)"></app-trip-list-item>
-                    }
-                </section>
-            </ng-scrollbar>
+            @defer (on interaction) {
+                <ng-scrollbar>
+                    <section class="scroll-container">
+                        @for (offer of filteredOffers(); track offer) {
+                            <app-trip-list-item [trip]="offer" (addAction)="addToCart(offer)"></app-trip-list-item>
+                        }
+                    </section>
+                </ng-scrollbar>
+            } @placeholder {
+                <div class="placeholder-container">
+                    <p>Click to load search results...</p>
+                </div>
+            } @loading (minimum 500ms) {
+                <div class="loading-container">
+                    <p>Loading results...</p>
+                </div>
+            }
         </mat-list>
     </div>
 </form>

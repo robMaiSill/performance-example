@@ -1,6 +1,16 @@
 <div class="p-4">
     <ng-template #vcr></ng-template>
-    <app-travel-offer-list [trips]="trips()"></app-travel-offer-list>
+    @defer (on viewport) {
+        <app-travel-offer-list [trips]="trips()"></app-travel-offer-list>
+    } @placeholder {
+        <div class="placeholder-list">
+            <p>Travel offers loading...</p>
+        </div>
+    } @loading (minimum 500ms) {
+        <div class="loading-list">
+            <p>Loading travel offers...</p>
+        </div>
+    }
     <button mat-raised-button class="mt-2" (click)="changeItem()">Change Item</button>
     <button mat-raised-button class="mt-2" (click)="addItem()">Add Item</button>
 </div>

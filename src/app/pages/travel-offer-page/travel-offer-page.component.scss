@@ -1,0 +1,14 @@
+.placeholder-list,
+.loading-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    min-height: 300px;
+    color: #666;
+    font-style: italic;
+}
+
+.loading-list {
+    color: #1976d2;
+}

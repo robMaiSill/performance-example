@@ -2,7 +2,18 @@
     <div class="form-content">
         <h2 mat-subheader>Basket</h2>
         <mat-list>
-            <ng-scrollbar>
+            @defer (on idle) {
+                <ng-scrollbar>
+                    <section class="scroll-container">
+                        @for (item of basket(); track item) {
+                            <mat-list-item>
+                                <span matListItemTitle>{{ item?.header }}</span>
+                                <span matListItemLine>{{ item?.content }}</span>
+                            </mat-list-item>
+                        }
+                    </section>
+                </ng-scrollbar>
+            } @placeholder {
                 <section class="scroll-container">
                     @for (item of basket(); track item) {
                         <mat-list-item>
@@ -11,7 +22,9 @@
                         </mat-list-item>
                     }
                 </section>
-            </ng-scrollbar>
+            } @loading (minimum 300ms) {
+                <div class="loading-basket">Loading basket items...</div>
+            }
         </mat-list>
         <!--my-counter></my-counter-->
     </div>

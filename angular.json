@@ -26,11 +26,9 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": {
-              "base": "dist/performance-app",
-              "browser": ""
-            },
+            "outputPath": "dist/performance-app",
             "index": "src/index.html",
+            "browser": "src/main.ts",
             "polyfills": [
               "src/polyfills.ts"
             ],
@@ -63,7 +61,6 @@
             "sourceMap": true,
             "optimization": false,
             "namedChunks": true,
-            "browser": "src/main.ts",
             "stylePreprocessorOptions": {
               "includePaths": [
                 "."
@@ -78,6 +75,11 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "server": "src/main.server.ts",
+              "prerender": false,
+              "ssr": {
+                "entry": "server.ts"
+              },
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -103,6 +105,8 @@
                   "with": "src/environments/environment.mock.ts"
                 }
               ],
+              "server": false,
+              "ssr": false,
               "budgets": [
                 {
                   "type": "initial",

@@ -25,3 +25,18 @@ mat-list {
 .search-icon {
     vertical-align: middle;
 }
+
+.placeholder-container,
+.loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    min-height: 200px;
+    color: #666;
+    font-style: italic;
+}
+
+.loading-container {
+    color: #1976d2;
+}
